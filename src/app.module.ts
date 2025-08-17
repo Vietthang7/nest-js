@@ -7,6 +7,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { Product } from './models/product.model';
 import { Category } from './models/category.model';
 import { ProductCategory } from './models/product-category.model';
+import { ProductsModule } from './modules/products/products.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -17,6 +18,7 @@ import { ProductCategory } from './models/product-category.model';
       ...databaseConfig,
       models: [Product, Category, ProductCategory],
     }),
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

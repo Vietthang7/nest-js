@@ -9,6 +9,7 @@ export const databaseConfig: SequelizeModuleOptions = {
   database: process.env.DB_DATABASE || 'nest-js',
   autoLoadModels: true,
   synchronize: true, // Chỉ dùng trong development
-  sync: { force: true },
-  logging: console.log,
+  logging: false, // Tắt log SQL
+  // sync: { force: true },
+  // logging: console.log,
 };
